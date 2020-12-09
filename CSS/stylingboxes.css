@@ -1,0 +1,84 @@
+/*mobile devices and defaults*/
+html,body,.container,.main_layout,.tiles{
+    height:100%;
+}
+.main_layout{
+    margin-top:2%;
+}
+.tiles{
+   display:grid;
+   grid-gap:5%;
+   grid-row-gap:5%;
+  
+
+}
+.element{
+    border: solid;
+    text-align:center;
+
+    
+       
+}
+.first{
+    grid-column-start: 1;
+    grid-column-end: 4;
+
+}
+.second{
+    grid-column-start: 4;
+    grid-column-end: 8;
+}
+.third{
+    grid-column-start: 8;
+    grid-column-end:12;
+}
+.fourth{
+    grid-row-start: 2;
+    grid-column-start:1;
+    grid-column-end:4;
+
+}
+.fifth{
+    grid-row-start: 2;
+    grid-column-start:4;
+    grid-column-end:8;
+
+}
+.sixth{
+    grid-row-start: 2;
+    grid-column-start:8;
+    grid-column-end:12;
+}
+.seventh{
+    grid-row-start: 3;
+    grid-column-start:1;
+    grid-column-end:4;
+}
+.eighth{
+    grid-row-start: 3;
+    grid-column-start:4;
+    grid-column-end:8;
+}
+.ninth{
+    grid-row-start: 3;
+    grid-column-start:8;
+    grid-column-end:12;
+}
+.tenth{
+    grid-row-start: 4;
+    grid-column-start:1;
+    grid-column-end:4;
+}
+.eleventh{
+    grid-row-start: 4;
+    grid-column-start:4;
+    grid-column-end:8;
+}
+.twelfth{
+    grid-row-start: 4;
+    grid-column-start:8;
+    grid-column-end:12;
+}
+
+
+
