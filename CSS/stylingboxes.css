@@ -1,5 +1,5 @@
 /*mobile devices and defaults*/
-html,body,.container,.main_layout,.tiles{
+html,body,.container,.main_layout{
     height:100%;
 }
 .main_layout{
@@ -7,14 +7,18 @@ html,body,.container,.main_layout,.tiles{
 }
 .tiles{
    display:grid;
-   grid-gap:5%;
-   grid-row-gap:5%;
+   grid-row-gap:7%;
+   grid-column-gap:5%;
+   height:85%;
+   grid-template-columns: repeat(3, 1fr);
   
 
 }
 .element{
     border: solid;
     text-align:center;
+    font-size:475%;
+    padding-top:50%;
 
     
        
