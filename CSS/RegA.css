@@ -37,7 +37,12 @@ h1{
     outline:none;
 }
 #Heading{
+    
     margin-top:7%;
+}
+.navbar-toggler-icon{
+    width:3.5rem;
+    height:2.5rem;
 }
 @media(min-width:992px){
     .main_layout{
