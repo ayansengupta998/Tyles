@@ -3,7 +3,7 @@ html,body,.container,.main_layout{
     height:100%;
 }
 .main_layout{
-    margin-top:2%;
+    margin-top:12%;
 }
 .tiles{
    display:grid;
@@ -21,9 +21,23 @@ html,body,.container,.main_layout{
     padding-top:50%;
     border-radius:16.7px;
     background-color:#8f8d8d;
-    outline:none;    
+    outline:none;
+    box-shadow:1px 0px 13px 4px rgba(0, 0, 0, 0.1);    
 }
 .element:focus{
     outline:none;
 }
-
+#Heading{
+    margin-top:7%;
+}
+@media(min-width:992px){
+    .main_layout{
+        margin-top:8%;
+    }
+    .tiles{
+        height:60%;
+    }
+    .col{
+        max-width: 90%;
+    }
+}
