@@ -23,6 +23,7 @@ let button_nine = document.getElementById('nine');
 let button_ten= document.getElementById('ten');
 let button_eleven = document.getElementById('eleven');
 let button_twelve = document.getElementById('twelve');
+var socket = io();
 function button_press1(x){
     var x;
 if(x==1){
@@ -36,6 +37,8 @@ else if(count1 == 2){
     count1 =0;
 
 }
+
+
 
 }
 function button_press2(x){
@@ -203,3 +206,15 @@ else if(count12 == 2){
 }
 
 }
+$(function () {
+    var socket = io();
+    $('#one').click(function(e){
+    
+      socket.emit('chat message', '13');
+      console.log('emitted')
+      return false;
+    });
+    socket.on('chat message', function(msg){
+      $('#messages').append($('<li>').text(msg));
+    });
+  });

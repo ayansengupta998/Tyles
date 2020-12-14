@@ -11,6 +11,7 @@ let count10 = 0;
 let count11 = 0;
 let count12 = 0;
 
+
 let button_one = document.getElementById('one');
 let button_two = document.getElementById('two');
 let button_three = document.getElementById('three');
