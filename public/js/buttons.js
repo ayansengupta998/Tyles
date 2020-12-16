@@ -300,45 +300,39 @@ $(function () {
     $('#nine').click(function(e){
     
         socket.emit('button9', '19');
-        console.log('emitted')
         return false;
     });
     socket.on('button9', function(msg){
       button_press9(1);
-      console.log(count9);
+      
     });
     //button 10
     $('#ten').click(function(e){
 
         socket.emit('button10', '13');
-        console.log('emitted')
         return false;
     });
     socket.on('button10', function(msg){
         button_press10(1);
-        console.log(count10);
     });
     //button 11
     $('#eleven').click(function(e){
     
         socket.emit('button11', '111');
-        console.log('emitted')
         return false;
     });
     socket.on('button11', function(msg){
         button_press11(1);
-        console.log(count11);
+    
     });
     //button 12
     $('#twelve').click(function(e){
     
         socket.emit('button12', '112');
-        console.log('emitted')
         return false;
     });
     socket.on('button12', function(msg){
         button_press12(1);
-        console.log(count12);
     });
 
     
