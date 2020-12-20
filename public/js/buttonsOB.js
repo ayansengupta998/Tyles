@@ -23,7 +23,6 @@ let button_nine = document.getElementById('nine');
 let button_ten= document.getElementById('ten');
 let button_eleven = document.getElementById('eleven');
 let button_twelve = document.getElementById('twelve');
-var socket = io();
 function button_press1(x){
     var x;
 if(x==1){
