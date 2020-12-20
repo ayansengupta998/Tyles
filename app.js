@@ -80,7 +80,7 @@ function button(socket, status) {
   //button11
   socket.on('button11', (msg) => {
     io.emit('button11', msg);
-    status[10] = !status[10];
+    status[10] = !status[10] ;
 
   });
   //button12
