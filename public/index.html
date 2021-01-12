@@ -2,90 +2,45 @@
 <html>
 <head>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" href ="CSS/RegA.css">
+<link rel="stylesheet" href ="../CSS/login.css">
 <title>Tyles - observerd testing management queing system</title>
-
 </head>
 <body>
-<section id = "navigation_bar">
-    <nav class="navbar navbar-dark bg-dark" style="background-color:#881c1c!important">
-        <!-- Navbar content -->
-        <a class="navbar-brand" href="#">Tyles</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarText">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="index.html">Registration A <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="ResgistrationB.html">Resgistration B</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="ObsA.html">Observed Testing A </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="ObsB.html">Observed Testing B</a>
-      </li>
-    </ul>
-  </div>
-    </nav>
-</section>
-<section id ="Heading">
-    <div class="container">
-        <h1 style ="text-align: center;">Registration A</h1>
-    </div>
-</section>
-<section class="main_layout">
-    <div class="container">
-        <div id="messages"></div>
-        <div class="tiles">
-            <button type = "button" id ="one" class = "element col">
-                1
-            </button>
-            <button type = "button" id ="two" class = "element col">
-                2
-            </button>
-            <button type = "button" id ="three" class = "element col">
-                3
-            </button>
-            <button type = "button" id ="four" class = "element col">
-                4
-            </button>
-            <button type = "button" id ="five" class = "element col">
-                5
-            </button>
-            <button type = "button" id ="six" class = "element col">
-                6
-            </button>
-            <button type = "button" id ="seven" class = "element col">
-                7
-            </button>
-            <button type = "button" id ="eight" class = "element col">
-                8
-            </button>
-            <button type = "button" id ="nine" class = "element col">
-                9
-            </button>
-            <button type = "button" id ="ten" class = "element col">
-                10
-            </button>
-            <button type = "button" id ="eleven" class = "element col">
-                11
-            </button>
-            <button type = "button" id ="twelve" class = "element col">
-                12
-            </button>
+    <section id = "navigation_bar">
+        <nav class="navbar navbar-dark bg-dark" style="background-color:#881c1c!important">
+            <!-- Navbar content -->
+            <a class="navbar-brand" href="#">University Of Massachusetts Amherst</a>
+        </nav>
+    </section>
+    <!-- Button to open the modal login form -->
+<button id="login" onclick="document.getElementById('id01').style.display='block'">Login</button>
 
+<!-- The Modal -->
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'"
+class="close" title="Close Modal">&times;</span>
 
-        </div>
+  <!-- Modal Content -->
+  <form class="modal-content animate pass-modal">
+    <div class="container">
+      <label for="psw"><b>Password</b></label>
+      <input id="security" type="password" placeholder="Enter Password" name="psw" required>
+      <button id ="pass-submit"type="button">Login</button>
     </div>
-</section>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <div class="container" style="background-color:#f1f1f1; text-align: center;">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+</div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
-<script src="/socket.io/socket.io.js"></script>
-<script src="js/buttons.js"></script>
+<!--Prevents user from going back to the log in page-->
+<script type = "text/javascript" >
+  function preventBack() { window.history.forward(); }
+  setTimeout("preventBack()", 0);
+  window.onunload = function () { null };
+  </script>
+<script src="js/login.js"></script>
 </body>
 </html>
