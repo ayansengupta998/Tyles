@@ -1,15 +1,13 @@
 $(document).ready(function(){
     let passfield = $('#security');
     $("#pass-submit").on("click",function(){
-        if(passfield.val()=="Money2020"){
+        if(passfield.val()=="Covid2020$"){
             location.href="../RegistrationA.html"
         }
         else{
             let text = "";
             passfield.text(text);
-            alert("Wrong Password");
+            alert("Wrong Password, retry");
         }
-    });
-    
-    
+    });  
 });
