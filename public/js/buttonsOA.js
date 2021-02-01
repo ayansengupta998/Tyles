@@ -211,7 +211,7 @@ $(function () {
     //button 1
     $('#one').click(function(e){
     
-        socket.emit('button1', '13');
+        socket.emit('button1','obsA')
         return false;
     });
     socket.on('button1', function(msg){
@@ -220,7 +220,7 @@ $(function () {
     //button 2
     $('#two').click(function(e){
     
-        socket.emit('button2', '13');
+        socket.emit('button2','obsA')
         
         return false;
     });
@@ -230,7 +230,7 @@ $(function () {
     //button 3
     $('#three').click(function(e){
     
-        socket.emit('button3', '13');
+        socket.emit('button3','obsA')
         return false;
     });
     socket.on('button3', function(msg){
@@ -239,7 +239,7 @@ $(function () {
     //button 4
     $('#four').click(function(e){
 
-        socket.emit('button4', '13');
+        socket.emit('button4','obsA')
         return false;
     });
     socket.on('button4', function(msg){
@@ -248,7 +248,7 @@ $(function () {
     //button 5
     $('#five').click(function(e){
     
-        socket.emit('button5', '15');
+        socket.emit('button5','obsA')
 
         return false;
     });
@@ -258,7 +258,7 @@ $(function () {
     //button 6
     $('#six').click(function(e){
     
-        socket.emit('button6', '16');
+        socket.emit('button6','obsA')
         return false;
     });
     socket.on('button6', function(msg){
@@ -267,7 +267,7 @@ $(function () {
     //button 7
     $('#seven').click(function(e){
     
-        socket.emit('button7', '73');
+        socket.emit('button7','obsA')
         return false;
     });
     socket.on('button7', function(msg){
@@ -276,7 +276,7 @@ $(function () {
     //button 8
     $('#eight').click(function(e){
     
-        socket.emit('button8', '13');
+        socket.emit('button8','obsA')
         return false;
     });
     socket.on('button8', function(msg){
@@ -285,7 +285,7 @@ $(function () {
     //button 9
     $('#nine').click(function(e){
     
-        socket.emit('button9', '19');
+        socket.emit('button9','obsA')
         return false;
     });
     socket.on('button9', function(msg){
@@ -294,7 +294,7 @@ $(function () {
     //button 10
     $('#ten').click(function(e){
 
-        socket.emit('button10', '13');
+        socket.emit('button10','obsA')
         return false;
     });
     socket.on('button10', function(msg){
@@ -303,7 +303,7 @@ $(function () {
     //button 11
     $('#eleven').click(function(e){
     
-        socket.emit('button11', '111');
+        socket.emit('button11', 'obsA')
         return false;
     });
     socket.on('button11', function(msg){
@@ -312,7 +312,7 @@ $(function () {
     //button 12
     $('#twelve').click(function(e){
     
-        socket.emit('button12', '112');
+        socket.emit('button12', 'obsA')
         return false;
     });
     socket.on('button12', function(msg){
