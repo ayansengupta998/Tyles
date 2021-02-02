@@ -23,300 +23,218 @@ let button_nine = document.getElementById('nine');
 let button_ten= document.getElementById('ten');
 let button_eleven = document.getElementById('eleven');
 let button_twelve = document.getElementById('twelve');
+
+let buttons = [button_one, button_two, button_three, button_four, button_five, button_six, button_seven, button_eight, button_nine, button_ten, button_eleven, button_twelve]
+let counts = [count1, count2, count3, count4, count5, count6, count7, count8, count9, count10, count11, count12]
+
+
+var button_status = [false, false, false, false, false, false, false, false, false, false, false, false];
+console.log(button_status[0])
 var socket = io();
-function button_press1(x){
-    var x;
-if(x==1){
-   count1 =count1 +1;
-}
-if(count1 == 1){
-    button_one.style.backgroundColor ="#881c1c";
-}
-else if(count1 == 2){
-    button_one.style.backgroundColor ="#8f8d8d";
-    count1 =0;
-
-}
 
 
+socket.emit('init', 'obsA')
 
-}
-function button_press2(x){
-    var x;
-if(x==1){
-   count2 =count2 +1;
-}
-if(count2 == 1){
-    button_two.style.backgroundColor ="#881c1c";
-}
-else if(count2 == 2){
-    button_two.style.backgroundColor ="#8f8d8d";
-    count2 =0;
+socket.on('update', (s) => {
+    button_status = s
+    console.log(button_status)
+    for(let i = 0; i < 12; i++) {
 
-}
+        console.log(button_status[i])
+        if(button_status[i] == true)
+        {
+            buttons[i].style.backgroundColor ="#881c1c"
+        } else {    
+            buttons[i].style.backgroundColor ="#8f8d8d";   
+        }
+    }
+});
 
-}
-function button_press3(x){
-    var x;
-if(x==1){
-   count3 =count3 +1;
-}
-if(count3 == 1){
-    button_three.style.backgroundColor ="#881c1c";
-}
-else if(count3 == 2){
-    button_three.style.backgroundColor ="#8f8d8d";
-    count3 =0;
+let room = "obsA"
 
-}
-
-}
-function button_press4(x){
-    var x;
-if(x==1){
-   count4 =count4 +1;
-}
-if(count4 == 1){
-    button_four.style.backgroundColor ="#881c1c";
-}
-else if(count4 == 2){
-    button_four.style.backgroundColor ="#8f8d8d";
-    count4 =0;
-
+function button_press(n, x)
+{
+    if(x==1)
+    {
+        counts[n] = counts[n] + 1
+    }
+    if(counts[n] == 1)
+    {
+        buttons[n].style.backgroundColor ="#881c1c"
+    }
+    else if(counts[n] == 2)
+    {
+        buttons[n].style.backgroundColor ="#8f8d8d";
+        counts[n] =0;
+    }
 }
 
-}
-function button_press5(x){
-    var x;
-if(x==1){
-   count5 =count5 +1;
-}
-if(count5 == 1){
-    button_five.style.backgroundColor ="#881c1c";
-}
-else if(count5 == 2){
-    button_five.style.backgroundColor ="#8f8d8d";
-    count5 =0;
-
+function emit_info(button)
+{
+    return [!button_status[button - 1], room]
 }
 
-}
-function button_press6(x){
-    var x;
-if(x==1){
-   count6 =count6 +1;
-}
-if(count6 == 1){
-    button_six.style.backgroundColor ="#881c1c";
-}
-else if(count6 == 2){
-    button_six.style.backgroundColor ="#8f8d8d";
-    count6 =0;
-
-}
-
-}
-function button_press7(x){
-    var x;
-if(x==1){
-   count7 =count7 +1;
-}
-if(count7 == 1){
-    button_seven.style.backgroundColor ="#881c1c";
-}
-else if(count7 == 2){
-    button_seven.style.backgroundColor ="#8f8d8d";
-    count7 =0;
-
-}
-
-}
-function button_press8(x){
-    var x;
-if(x==1){
-   count8 =count8 +1;
-}
-if(count8 == 1){
-    button_eight.style.backgroundColor ="#881c1c";
-}
-else if(count8 == 2){
-    button_eight.style.backgroundColor ="#8f8d8d";
-    count8 =0;
-
-}
-
-}
-function button_press9(x){
-    var x;
-if(x==1){
-   count9 =count9 +1;
-}
-if(count9 == 1){
-    button_nine.style.backgroundColor ="#881c1c";
-}
-else if(count9 == 2){
-    button_nine.style.backgroundColor ="#8f8d8d";
-    count9 =0;
-
-}
-
-}
-function button_press10(x){
-    var x;
-if(x==1){
-   count10 =count10 +1;
-}
-if(count10 == 1){
-    button_ten.style.backgroundColor ="#881c1c";
-}
-else if(count10 == 2){
-    button_ten.style.backgroundColor ="#8f8d8d";
-    count10 =0;
-
-}
-
-}
-function button_press11(x){
-    var x;
-if(x==1){
-   count11 =count11 +1;
-}
-if(count11 == 1){
-    button_eleven.style.backgroundColor ="#881c1c";
-}
-else if(count11 == 2){
-    button_eleven.style.backgroundColor ="#8f8d8d";
-    count11 =0;
-
-}
-
-}
-function button_press12(x){
-    var x;
-if(x==1){
-   count12 =count12 +1;
-}
-if(count12 == 1){
-    button_twelve.style.backgroundColor ="#881c1c";
-}
-else if(count12 == 2){
-    button_twelve.style.backgroundColor ="#8f8d8d";
-    count12 =0;
-
-}
-
-}
 $(function () {
     var socket = io();
     //button 1
     $('#one').click(function(e){
-    
-        socket.emit('button1','obsA')
-        return false;
+        console.log(emit_info(1))
+        socket.emit('button1', emit_info(1))
     });
-    socket.on('button1', function(msg){
-      button_press1(1);
+    socket.on('button1', function(params){
+      if(params[1] == room && params[0] == counts[0])
+      {
+        button_press(0, 1);
+        console.log(count1);
+      }
     });
     //button 2
     $('#two').click(function(e){
     
-        socket.emit('button2','obsA')
-        
+        socket.emit('button2',emit_info(2))
+        console.log('emitted')
         return false;
     });
-    socket.on('button2', function(msg){
-      button_press2(1);
+    socket.on('button2', function(params){
+      if(params[1] == room && params[0] == counts[1])
+      {
+        button_press(1, 1);
+        console.log(count2);
+      }
     });
     //button 3
     $('#three').click(function(e){
     
-        socket.emit('button3','obsA')
-        return false;
+            socket.emit('button3',emit_info(3))
+            console.log('emitted')
+            return false;
+        
     });
-    socket.on('button3', function(msg){
-      button_press3(1);
+    socket.on('button3', function(params){
+      if(params[1] == room && params[0] == counts[2])
+      {
+        button_press(2, 1);
+        console.log(count3);
+      }
     });
     //button 4
     $('#four').click(function(e){
 
-        socket.emit('button4','obsA')
+        socket.emit('button4',emit_info(4))
+        console.log('emitted')
         return false;
     });
-    socket.on('button4', function(msg){
-        button_press4(1);
+    socket.on('button4', function(params){
+        if(params[1] == room && params[0] == counts[3])
+        {
+            button_press(3, 1);
+            console.log(count4);
+        }
     });
     //button 5
     $('#five').click(function(e){
     
-        socket.emit('button5','obsA')
-
+        socket.emit('button5',emit_info(5))
+        console.log('emitted')
         return false;
     });
-    socket.on('button5', function(msg){
-        button_press5(1);
+    socket.on('button5', function(params){
+        if(params[1] == room && params[0] == counts[4])
+        {
+            button_press(4, 1);
+            console.log(count5);
+        }
     });
     //button 6
     $('#six').click(function(e){
     
-        socket.emit('button6','obsA')
+        socket.emit('button6', emit_info(6))
+        console.log('emitted')
         return false;
     });
-    socket.on('button6', function(msg){
-        button_press6(1);
+    socket.on('button6', function(params){
+        if(params[1] == room && params[0] == counts[5])
+        {
+            button_press(5, 1);
+            console.log(count6);
+        }
     });
     //button 7
     $('#seven').click(function(e){
     
-        socket.emit('button7','obsA')
+        socket.emit('button7',emit_info(7))
+        console.log('emitted')
         return false;
+        
     });
-    socket.on('button7', function(msg){
-      button_press7(1);
+    socket.on('button7', function(params){
+      if(params[1] == room && params[0] == counts[6])
+      {
+        button_press(6, 1);
+        console.log(count7);
+      }
     });
     //button 8
     $('#eight').click(function(e){
     
-        socket.emit('button8','obsA')
+        socket.emit('button8',emit_info(8))
+        console.log('emitted')
         return false;
     });
-    socket.on('button8', function(msg){
-      button_press8(1);
+    socket.on('button8', function(params){
+      if(params[1] == room && params[0] == counts[0])
+      {
+        button_press(7, 1);
+        console.log(count8);
+      }
     });
     //button 9
     $('#nine').click(function(e){
     
-        socket.emit('button9','obsA')
+        socket.emit('button9',emit_info(9))
         return false;
     });
-    socket.on('button9', function(msg){
-      button_press9(1);
+    socket.on('button9', function(params){
+      if(params[1] == room && params[0] == counts[7])
+      {
+          button_press(8, 1);
+      }
     });
     //button 10
     $('#ten').click(function(e){
 
-        socket.emit('button10','obsA')
+        socket.emit('button10',emit_info(10))
         return false;
     });
-    socket.on('button10', function(msg){
-        button_press10(1);
+    socket.on('button10', function(params){
+        if(params[1] == room && params[0] == counts[8])
+        {
+            button_press(9, 1);
+        }
     });
     //button 11
     $('#eleven').click(function(e){
     
-        socket.emit('button11', 'obsA')
+        socket.emit('button11', emit_info(11))
         return false;
     });
-    socket.on('button11', function(msg){
-        button_press11(1);
+    socket.on('button11', function(params){
+        if(params[1] == room && params[0] == counts[9])
+        {
+            button_press(10, 1);
+        }
     });
     //button 12
     $('#twelve').click(function(e){
     
-        socket.emit('button12', 'obsA')
+        socket.emit('button12', emit_info(12))
         return false;
     });
-    socket.on('button12', function(msg){
-        button_press12(1);
+    socket.on('button12', function(params){
+        if(params[1] == room && params[0] == counts[10])
+        {
+            button_press(11, 1);
+        }
     });
 
     
