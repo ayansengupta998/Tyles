@@ -1,6 +1,6 @@
 $(document).ready(function(){
     let passfield = $('#security');
-    $("#pass-submit").on("click",function(){
+    $("#pass-submit").click(function(){
         if(passfield.val()=="Covid2020$"){
             location.href="../RegistrationA.html"
         }
@@ -10,4 +10,11 @@ $(document).ready(function(){
             alert("Wrong Password, retry");
         }
     });  
+    passfield.keypress(function(event) {
+        if(event.which == 13) {
+            $("#pass-submit").click();
+            console.log("hi")
+        }
+    });
+    
 });

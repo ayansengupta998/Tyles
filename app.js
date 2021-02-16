@@ -154,4 +154,11 @@ io.on('connection', (socket => {
       io.emit('update', [msg, status_obs_b])
     }
   });
+
+  setInterval(() => {
+    io.emit('update', ['regA', status_reg_a])
+    io.emit('update', ['regB', status_reg_b])
+    io.emit('update', ['obsA', status_obs_a])
+    io.emit('update', ['obsB', status_obs_b])
+  }, 2000);
 }));
